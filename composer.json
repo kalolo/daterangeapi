@@ -1,0 +1,14 @@
+{
+    "name": "clopez/daterangeapi",
+    "description": "daterange api",
+    "type": "project",
+    "authors": [
+        {
+            "name": "kalolo",
+            "email": "kalolo@gmail.com"
+        }
+    ],
+    "require": {
+      "php": "^7.1.3"
+    }
+}
