@@ -3,6 +3,7 @@
 namespace App\Repository;
 
 use App\Entities\DateRangeEntity;
+use App\Repository\Driver\PdoDriver;
 
 
 class PriceRangeRepository {
@@ -11,7 +12,7 @@ class PriceRangeRepository {
     private static $instance;
 
     private function __construct() {
-        $this->_pdoInstance = new \PDO("mysql:dbname=daterangeapi;host=localhost", 'root', '', null);
+        $this->_pdoInstance = PdoDriver::getDriver();
     }
 
     private static function getInstance() {
@@ -28,7 +29,7 @@ class PriceRangeRepository {
         return $stmt->fetchAll(\PDO::FETCH_OBJ);
     }
 
-    public function executeQUERY($query, $args = [])
+    public function executeQuery($query, $args = [])
     {
         $stmt = $this->_pdoInstance->prepare($query);
         return $stmt->execute($args);

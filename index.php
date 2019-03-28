@@ -5,5 +5,3 @@ use App\Controllers\ApiController as ApiController;
 use App\RequestHandler;
 
 RequestHandler::handle();
-
-?>
